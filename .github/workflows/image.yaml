@@ -62,7 +62,7 @@ jobs:
       packages: write  # for pushing packages to GHCR, which is used by cd.apps.argoproj.io to avoid polluting Quay with tags
       id-token: write # for creating OIDC tokens for signing.
     if: ${{ github.event_name == 'push' }}
-    uses: ./.github/workflows/image-reuse.yaml
+    uses: https://github.com/argoproj/argo-cd/.github/workflows/image-reuse.yaml@v2.11.3
     with:
       ghcr_image_name: ghcr.io/richardfan1126/argo-cd/argocd:${{ needs.set-vars.outputs.image-tag }}
       # Note: cannot use env variables to set go-version (https://docs.github.com/en/actions/using-workflows/reusing-workflows#limitations)
