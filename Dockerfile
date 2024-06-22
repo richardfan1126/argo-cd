@@ -1,3 +1,3 @@
-FROM alpine:lates
+FROM alpine:latest
 
 CMD ["/bin/sh", "-c", "echo Hello world"]
